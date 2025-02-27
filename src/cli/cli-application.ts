@@ -1,6 +1,8 @@
 import { Command } from './commands/command.interface.js';
 import { CommandParser } from './command-parser.js';
 
+import { Styles } from '../shared/libs/chalk-styles/chalk-styles.js';
+
 type CommandCollection = Record<string, Command>;
 
 export class CLIApplication {
@@ -13,7 +15,7 @@ export class CLIApplication {
   public registerCommands(commandList: Command[]): void {
     commandList.forEach((command) => {
       if (Object.hasOwn(this.commands, command.getName())) {
-        throw new Error(`Command ${command.getName()} is already registered`);
+        throw new Error(Styles.error(`Command ${command.getName()} is already registered`));
       }
       this.commands[command.getName()] = command;
     });
@@ -25,7 +27,7 @@ export class CLIApplication {
 
   public getDefaultCommand(): Command | never {
     if (! this.commands[this.defaultCommand]) {
-      throw new Error(`The default command (${this.defaultCommand}) is not registered.`);
+      throw new Error(Styles.error(`The default command (${this.defaultCommand}) is not registered.`));
     }
     return this.commands[this.defaultCommand];
   }
