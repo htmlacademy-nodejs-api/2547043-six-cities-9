@@ -1,0 +1,83 @@
+{
+  "api": {
+    "titles": [
+      "Уютная квартира в центре Парижа",
+      "Уютная квартира в центре Амстердам",
+      "Уютная квартира в центре Брюсселя",
+      "Уютная квартира в центре Дюссельдорфа",
+      "Уютная квартира в центре Кёльна",
+      "Уютная квартира в центре Гамбурга"
+    ],
+    "descriptions": [
+      "Описание уютной квартиры в центре Парижа. Идеально для пары или семьи.",
+      "Описание уютной квартиры в центре Амстердама. Идеально для пары или семьи.",
+      "Описание уютной квартиры в центре Брюсселя. Идеально для пары или семьи.",
+      "Описание уютной квартиры в центре Гамбурга. Идеально для пары или семьи.",
+      "Описание уютной квартиры в центре Дюссельдорфа. Идеально для пары или семьи.",
+      "Описание уютной квартиры в центре Кёльна. Идеально для пары или семьи."
+    ],
+    "cities": ["Paris", "Brussels", "Amsterdam", "Cologne", "Dusseldorf", "Hamburg"],
+    "previewImages": ["preview1.jpg", "preview2.jpg", "preview3.jpg", "preview4.jpg", "preview5.jpg", "preview6.jpg"],
+    "photos": ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg", "image5.jpg", "image6.jpg"],
+    "isPremium": [true, false],
+    "isFavorite": [true, false],
+    "ratings": [4.1 , 3, 5, 2, 3.4, 4.4, 4.8, 3.6],
+    "accommodationTypes": ["apartment", "house", "room", "hotel"],
+    "roomsCounts": [1, 2, 3],
+    "guestsCounts": [1, 2, 3],
+    "amenities": [
+      "Breakfast",
+      "Air conditioning",
+      "Laptop friendly workspace",
+      "Baby seat",
+      "Washer",
+      "Towels",
+      "Fridge"
+    ],
+    "names": [
+      "Иван Иванов",
+      "Мария Петрова",
+      "Алексей Смирнов",
+      "Ольга Васильева",
+      "Дмитрий Кузнецов",
+      "Анна Попова"
+    ],
+    "emails": [
+      "ivan.ivanov@example.com",
+      "maria.petrova@example.com",
+      "alexey.smirnov@example.com",
+      "olga.vasilieva@example.com",
+      "dmitriy.kuznetsov@example.com",
+      "anna.popova@example.com"
+    ],
+    "avatars": [
+      "ivan_ivanov.jpg",
+      "maria_petrova.jpg",
+      "alexey_smirnov.jpg",
+      "olga_vasilieva.jpg",
+      "dmitriy_kuznetsov.jpg",
+      "anna_popova.jpg"
+    ],
+    "passwords": [
+      "qJ7x!2kP",
+      "tU9#e3Lz",
+      "Wb4$h1Zq",
+      "aF9*eK0m",
+      "R2xJ!vP7",
+      "zN5k@iS8"
+    ],
+    "userTypes": [
+      "pro",
+      "default"
+    ],
+    "commentsCounts": [2, 1, 5, 15, 20, 13, 6],
+    "coordinates": [
+      [48.85661, 2.351499],
+      [50.938361, 6.959974],
+      [50.846557, 4.351697],
+      [52.370216, 4.895168],
+      [53.550341, 10.000654],
+      [51.225402, 6.776314]
+    ]
+  }
+}

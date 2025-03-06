@@ -1,5 +1,7 @@
 import { TSVFileReader } from '../../shared/libs/file-reader/tsv-file-reader.js';
 import { Command } from './command.interface.js';
+import { RentalOffer } from '../../shared/libs/types/index.js';
+import { getErrorMessage } from '../../shared/helpers/index.js';
 
 import { Styles } from '../../shared/libs/chalk-styles/chalk-styles.js';
 
@@ -8,21 +10,28 @@ export class ImportCommand implements Command {
     return '--import';
   }
 
+  private onImportedOffer(offer: RentalOffer): void {
+    console.info(offer);
+  }
+
+  private onCompleteImport(count: number) {
+    console.info(`${count} rows imported.`);
+  }
+
   public async execute(...parameters: string[]): Promise<void> {
-    const [filepath] = parameters;
+    const [filename] = parameters;
+    const fileReader = new TSVFileReader(filename.trim());
+    fileReader.on('line', this.onImportedOffer);
+    fileReader.on('end', this.onCompleteImport);
     try {
-      if (filepath === undefined) {
+      if (filename === undefined) {
         throw new Error(Styles.error('file path required'));
       }
-      const fileReader = new TSVFileReader(filepath.trim());
       fileReader.read();
-      console.log(fileReader.toArray());
-    } catch (err: unknown) {
-      if (!(err instanceof Error)) {
-        throw err;
-      }
-      console.error(Styles.error(`Can't import data from file: ${filepath}`));
-      console.error(Styles.error(`Details: ${err.message}`));
+    } catch (error) {
+
+      console.error(Styles.error(`Can't import data from file: ${filename}`));
+      console.error(Styles.error(`Details: ${getErrorMessage(error)}`));
     }
   }
 }
