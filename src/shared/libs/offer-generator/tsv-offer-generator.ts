@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 
 import { OfferGenerator } from './offer-generator.interface.js';
-import { Accommodation, MockServerData, Amenities, UserType} from '../types/index.js';
+import { Accommodation, MockServerData, Amenities, UserType} from '../../types/index.js';
 import { generateRandomValue, getRandomItem, getRandomItems } from '../../helpers/index.js';
 
 const MIN_PRICE = 500;

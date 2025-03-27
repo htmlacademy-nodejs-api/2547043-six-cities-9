@@ -5,7 +5,7 @@ import { config } from 'dotenv';
 
 import { configRestSchema, RestSchema } from './rest.schema.js';
 
-import { Component } from '../types/index.js';
+import { Component } from '../../types/index.js';
 import { injectable, inject } from 'inversify';
 
 @injectable()
