@@ -33,19 +33,11 @@ export class ImportCommand implements Command {
     return '--import';
   }
 
-  private async onImportedOffer(offer: RentalOffer, resolve: () => void) {
-    await this.saveOffer(offer);
-    resolve();
-  }
-
   private async saveOffer(offer: RentalOffer) {
     const user = await this.userService.findOrCreate({
       ...offer.user,
       password: DEFAULT_USER_PASSWORD
     }, this.salt);
-
-    console.log('before create: ');
-    console.log(offer);
 
     await this.offerService.create({
       userId: user.id,
@@ -65,7 +57,11 @@ export class ImportCommand implements Command {
       commentsCount: offer.commentsCount,
       coordinates: offer.coordinates,
     });
+  }
 
+  private async onImportedOffer(offer: RentalOffer, resolve: () => void) {
+    await this.saveOffer(offer);
+    resolve();
   }
 
   private onCompleteImport(count: number) {
